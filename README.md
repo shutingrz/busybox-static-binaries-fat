@@ -8,6 +8,8 @@ busybox-arm-linux-gnueabi:     ELF 32-bit LSB executable, ARM, EABI5 version 1 (
 busybox-arm-linux-gnueabihf:   ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=2b094455ba0efc892d15b26f4e84a97ef98332bd, stripped
 busybox-mipsel-linux-gnu:      ELF 32-bit LSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=15b88f68566d4c5befc5c30d714a365ad3cd8447, stripped
 busybox-powerpc64le-linux-gnu: ELF 64-bit LSB executable, 64-bit PowerPC or cisco 7500, OpenPOWER ELF V2 ABI, version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=d6fc89421ddbdc5b2473045c508fcf151db4d2ab, stripped
+busybox-riscv32-linux-gnu:     ELF 32-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, for GNU/Linux 5.4.179, stripped
+busybox-riscv64-linux-gnu:     ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, for GNU/Linux 4.15.0, BuildID[sha1]=298b98af7b4473ffa41af3a3b924373f4a039b74, stripped
 ```
 
 
