@@ -3,6 +3,7 @@
 busybox v1.35.0 static binaries
 
 ```
+busybox-x86_64-linux-gnu:      ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 2.6.32, BuildID[sha1]=c9e4b2420c8a56092271b4e1a8bf1742bfcb8e9b, stripped
 busybox-aarch64-linux-gnu:     ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linked, for GNU/Linux 3.7.0, BuildID[sha1]=9e6cc3da075a02bf5d669cf484b5a1579ee810f4, stripped
 busybox-arm-linux-gnueabi:     ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=935702e86bd733a747a65d366ea07f6cec9a29f1, stripped
 busybox-arm-linux-gnueabihf:   ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=2b094455ba0efc892d15b26f4e84a97ef98332bd, stripped
