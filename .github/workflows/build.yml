@@ -172,15 +172,17 @@ jobs:
         working-directory: busybox
       - name: Update README.md
         run: |
-          head -n2 README.md | tee README.md > /dev/null
+          mv README.md README.md.old
+          head -n2 README.md.old > README.md
           echo -e "busybox v${BUSYBOX_DIRNAME##busybox-} static binaries\n" >> README.md
           echo '```console' >> README.md
-          /bin/bash -c 'PS4="$ "; set -x; file ./busybox-*' &>> README.md
+          /bin/bash -c 'PS4="$ "; set -x; file busybox-*' &>> README.md
           echo -e '```\n' >> README.md
           echo '# bundled commands' >> README.md
           echo '```console' >> README.md
           /bin/bash -c 'PS4="$ "; set -x; qemu-aarch64-static ./busybox-aarch64-linux-gnu' &>> README.md
           echo '```' >> README.md
+          rm README.md.old
         working-directory: main
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
