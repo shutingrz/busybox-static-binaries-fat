@@ -26,13 +26,13 @@ jobs:
           file qemu-user-static \
           g++-aarch64-linux-gnu g++-arm-linux-gnueabi g++-arm-linux-gnueabihf g++-mips-linux-gnu g++-mipsel-linux-gnu \
           g++-mips64-linux-gnuabi64 g++-mips64el-linux-gnuabi64 g++-powerpc64le-linux-gnu g++-riscv64-linux-gnu\n
-          mkdir -p /usr/local/rv32\n
-          wget -O- $RISCV32_TOOLCHAIN_URL | tar -C /usr/local/rv32 --strip-components=1 -xzvf -\n
-          ln -s /usr/local/rv32/sysroot /usr/riscv32-linux-gnu\n
-          ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-ar /usr/bin/riscv32-linux-gnu-ar\n
-          ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-strip /usr/bin/riscv32-linux-gnu-strip\n
-          echo '/usr/local/rv32/bin/riscv32-unknown-linux-gnu-gcc -L/usr/riscv32-linux-gnu \"$@\"' > /usr/bin/riscv32-linux-gnu-gcc\n
-          chmod +x /usr/bin/riscv32-linux-gnu-gcc\n
+          sudo mkdir -p /usr/local/rv32\n
+          wget -O- $RISCV32_TOOLCHAIN_URL | sudo tar -C /usr/local/rv32 --strip-components=1 -xzvf -\n
+          sudo ln -s /usr/local/rv32/sysroot /usr/riscv32-linux-gnu\n
+          sudo ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-ar /usr/bin/riscv32-linux-gnu-ar\n
+          sudo ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-strip /usr/bin/riscv32-linux-gnu-strip\n
+          echo '/usr/local/rv32/bin/riscv32-unknown-linux-gnu-gcc -L/usr/riscv32-linux-gnu \"$@\"' | sudo tee /usr/bin/riscv32-linux-gnu-gcc > /dev/null\n
+          sudo chmod +x /usr/bin/riscv32-linux-gnu-gcc\n
           mkdir busybox\n
         "
       - name: Get busybox
