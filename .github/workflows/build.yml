@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 
 env:
+  RISCV32_TOOLCHAIN_URL: https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2023.04.21/riscv32-glibc-ubuntu-22.04-nightly-2023.04.21-nightly.tar.gz
   BUSYBOX_URL: https://busybox.net/downloads/busybox-1.36.0.tar.bz2
   BUSYBOX_DIRNAME: busybox-1.36.0
 
@@ -25,12 +26,18 @@ jobs:
           file qemu-user-static \
           g++-aarch64-linux-gnu g++-arm-linux-gnueabi g++-arm-linux-gnueabihf g++-mips-linux-gnu g++-mipsel-linux-gnu \
           g++-mips64-linux-gnuabi64 g++-mips64el-linux-gnuabi64 g++-powerpc64le-linux-gnu g++-riscv64-linux-gnu\n
+          mkdir -p /usr/local/rv32\n
+          wget -O- $RISCV32_TOOLCHAIN_URL | tar -C /usr/local/rv32 --strip-components=1 -xzvf -\n
+          ln -s /usr/local/rv32/sysroot /usr/riscv32-linux-gnu\n
+          ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-ar /usr/bin/riscv32-linux-gnu-ar\n
+          ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-strip /usr/bin/riscv32-linux-gnu-strip\n
+          echo '/usr/local/rv32/bin/riscv32-unknown-linux-gnu-gcc -L/usr/riscv32-linux-gnu "$@"' > /usr/bin/riscv32-linux-gnu-gcc\n
+          chmod +x /usr/bin/riscv32-linux-gnu-gcc\n
           mkdir busybox\n
         "
       - name: Get busybox
         run: |
-          wget $BUSYBOX_URL
-          tar jxvf ${BUSYBOX_URL##*/}
+          wget -O- $BUSYBOX_URL | tar jxvf -
         working-directory: busybox
       - name: Build busybox for x86_64
         run: |
@@ -148,6 +155,20 @@ jobs:
           cd build
           export ARCH=powerpc
           export CROSS_COMPILE=powerpc64le-linux-gnu-
+          make KBUILD_SRC="../$BUSYBOX_DIRNAME" -f "../$BUSYBOX_DIRNAME/Makefile" defconfig
+          sed -e 's/.*\<CONFIG_STATIC\>.*/CONFIG_STATIC=y/' -i .config
+          make -j$(($(nproc)+1))
+          cp busybox "$GITHUB_WORKSPACE/main/busybox-${CROSS_COMPILE::-1}"
+          chmod +x "$GITHUB_WORKSPACE/main/busybox-${CROSS_COMPILE::-1}"
+          cd ..
+          rm -rf build
+        working-directory: busybox
+      - name: Build busybox for riscv32-linux-gnu
+        run: |
+          mkdir build
+          cd build
+          export ARCH=riscv
+          export CROSS_COMPILE=riscv32-linux-gnu-
           make KBUILD_SRC="../$BUSYBOX_DIRNAME" -f "../$BUSYBOX_DIRNAME/Makefile" defconfig
           sed -e 's/.*\<CONFIG_STATIC\>.*/CONFIG_STATIC=y/' -i .config
           make -j$(($(nproc)+1))
