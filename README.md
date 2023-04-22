@@ -1,4 +1,6 @@
-busybox v${BUSYBOX_DIRNAME##busybox-} static binaries
+# busybox-static-binaries-fat
+
+busybox v1.36.0 static binaries
 
 ```console
 $ file ./busybox-aarch64-linux-gnu ./busybox-arm-linux-gnueabi ./busybox-arm-linux-gnueabihf ./busybox-mips-linux-gnu ./busybox-mips64-linux-gnuabi64 ./busybox-mips64el-linux-gnuabi64 ./busybox-mipsel-linux-gnu ./busybox-powerpc64le-linux-gnu ./busybox-riscv32-linux-gnu ./busybox-riscv64-linux-gnu ./busybox-x86_64-linux-gnu

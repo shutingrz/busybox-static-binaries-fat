@@ -30,7 +30,7 @@ jobs:
       - name: Get busybox
         run: |
           wget $BUSYBOX_URL
-          tar jxvf busybox-1.36.0.tar.bz2
+          tar jxvf ${BUSYBOX_URL##*/}
         working-directory: busybox
       - name: Build busybox for x86_64
         run: |
@@ -170,10 +170,10 @@ jobs:
           cd ..
           rm -rf build
         working-directory: busybox
-      - name: Update README.md stub
+      - name: Update README.md
         run: |
-          head -n2 README.md > README.md
-          echo -e 'busybox v${BUSYBOX_DIRNAME##busybox-} static binaries\n' >> README.md
+          head -n2 README.md | tee README.md > /dev/null
+          echo -e "busybox v${BUSYBOX_DIRNAME##busybox-} static binaries\n" >> README.md
           echo '```console' >> README.md
           /bin/bash -c 'PS4="$ "; set -x; file ./busybox-*' &>> README.md
           echo -e '```\n' >> README.md
