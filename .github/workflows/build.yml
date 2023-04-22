@@ -27,7 +27,7 @@ jobs:
           g++-aarch64-linux-gnu g++-arm-linux-gnueabi g++-arm-linux-gnueabihf g++-mips-linux-gnu g++-mipsel-linux-gnu \
           g++-mips64-linux-gnuabi64 g++-mips64el-linux-gnuabi64 g++-powerpc64le-linux-gnu g++-riscv64-linux-gnu\n
           sudo mkdir -p /usr/local/rv32\n
-          wget -O- $RISCV32_TOOLCHAIN_URL | sudo tar -C /usr/local/rv32 --strip-components=1 -xzvf -\n
+          wget -O- -q $RISCV32_TOOLCHAIN_URL | sudo tar -C /usr/local/rv32 --strip-components=1 -xzf -\n
           sudo ln -s /usr/local/rv32/sysroot /usr/riscv32-linux-gnu\n
           sudo ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-ar /usr/bin/riscv32-linux-gnu-ar\n
           sudo ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-strip /usr/bin/riscv32-linux-gnu-strip\n
@@ -36,7 +36,7 @@ jobs:
           mkdir busybox\n
         "
       - name: Get busybox
-        run: wget -O- $BUSYBOX_URL | tar jxvf -
+        run: wget -O- -q $BUSYBOX_URL | tar jxf -
         working-directory: busybox
       - name: Build busybox for x86_64
         run: |
