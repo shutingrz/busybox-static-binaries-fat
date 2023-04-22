@@ -31,13 +31,12 @@ jobs:
           ln -s /usr/local/rv32/sysroot /usr/riscv32-linux-gnu\n
           ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-ar /usr/bin/riscv32-linux-gnu-ar\n
           ln -s /usr/local/rv32/bin/riscv32-unknown-linux-gnu-strip /usr/bin/riscv32-linux-gnu-strip\n
-          echo '/usr/local/rv32/bin/riscv32-unknown-linux-gnu-gcc -L/usr/riscv32-linux-gnu "$@"' > /usr/bin/riscv32-linux-gnu-gcc\n
+          echo '/usr/local/rv32/bin/riscv32-unknown-linux-gnu-gcc -L/usr/riscv32-linux-gnu \"$@\"' > /usr/bin/riscv32-linux-gnu-gcc\n
           chmod +x /usr/bin/riscv32-linux-gnu-gcc\n
           mkdir busybox\n
         "
       - name: Get busybox
-        run: |
-          wget -O- $BUSYBOX_URL | tar jxvf -
+        run: wget -O- $BUSYBOX_URL | tar jxvf -
         working-directory: busybox
       - name: Build busybox for x86_64
         run: |
