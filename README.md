@@ -4,23 +4,23 @@ busybox v1.36.0 static binaries
 
 ```console
 $ file busybox-aarch64-linux-gnu busybox-arm-linux-gnueabi busybox-arm-linux-gnueabihf busybox-mips-linux-gnu busybox-mips64-linux-gnuabi64 busybox-mips64el-linux-gnuabi64 busybox-mipsel-linux-gnu busybox-powerpc64le-linux-gnu busybox-riscv32-linux-gnu busybox-riscv64-linux-gnu busybox-x86_64-linux-gnu
-busybox-aarch64-linux-gnu:       ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=3f462711fa97b466d3d22b9ac14f0fb09398fbc9, for GNU/Linux 3.7.0, stripped
-busybox-arm-linux-gnueabi:       ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, BuildID[sha1]=39bdd0087f3f9a1427c4e2eedd669a87a5b738ce, for GNU/Linux 3.2.0, stripped
-busybox-arm-linux-gnueabihf:     ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, BuildID[sha1]=c5c9355f812ed5dc05f3583a032ba74fbf2085e8, for GNU/Linux 3.2.0, stripped
-busybox-mips-linux-gnu:          ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=67b7aba1bfdd51f6149f314b5ae70dd11fd8c76c, for GNU/Linux 3.2.0, stripped
-busybox-mips64-linux-gnuabi64:   ELF 64-bit MSB executable, MIPS, MIPS64 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=337985c605974e6059defaf0406704610801df99, for GNU/Linux 3.2.0, stripped
-busybox-mips64el-linux-gnuabi64: ELF 64-bit LSB executable, MIPS, MIPS64 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=91adec34d309e1b8b0e723c0ce0b33231f6a404d, for GNU/Linux 3.2.0, stripped
-busybox-mipsel-linux-gnu:        ELF 32-bit LSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=ce188165856b075579c6f89237e97f0bc292327f, for GNU/Linux 3.2.0, stripped
-busybox-powerpc64le-linux-gnu:   ELF 64-bit LSB executable, 64-bit PowerPC or cisco 7500, OpenPOWER ELF V2 ABI, version 1 (GNU/Linux), statically linked, BuildID[sha1]=675f89a5425358fb4153e0dacde5ec820b0ef914, for GNU/Linux 3.10.0, stripped
+busybox-aarch64-linux-gnu:       ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=e8db5e7869aaeaa78500eac69fa3e8e728752556, for GNU/Linux 3.7.0, stripped
+busybox-arm-linux-gnueabi:       ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, BuildID[sha1]=28124bfe545a8e9ed61c9fd7fd5132adf85a98f8, for GNU/Linux 3.2.0, stripped
+busybox-arm-linux-gnueabihf:     ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, BuildID[sha1]=33004d49656f9f47217787288a66f49d45424722, for GNU/Linux 3.2.0, stripped
+busybox-mips-linux-gnu:          ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=68801f9ec42d1e85c8b7cf93ed87612f0f2e26b5, for GNU/Linux 3.2.0, stripped
+busybox-mips64-linux-gnuabi64:   ELF 64-bit MSB executable, MIPS, MIPS64 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=8707e9ff610e9aad1236aa148f67d1dba180913a, for GNU/Linux 3.2.0, stripped
+busybox-mips64el-linux-gnuabi64: ELF 64-bit LSB executable, MIPS, MIPS64 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=d5c20a098b62e6bbf38aa8441aab28fadf8de415, for GNU/Linux 3.2.0, stripped
+busybox-mipsel-linux-gnu:        ELF 32-bit LSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=9d2fe381f7c6d602bce65ad004d27a5fb933a1f9, for GNU/Linux 3.2.0, stripped
+busybox-powerpc64le-linux-gnu:   ELF 64-bit LSB executable, 64-bit PowerPC or cisco 7500, OpenPOWER ELF V2 ABI, version 1 (GNU/Linux), statically linked, BuildID[sha1]=466545d02a8170b10bd16d8e55299fa8b7926cf4, for GNU/Linux 3.10.0, stripped
 busybox-riscv32-linux-gnu:       ELF 32-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, for GNU/Linux 5.4.0, stripped
-busybox-riscv64-linux-gnu:       ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=2d7370292756839ddb954ef5dc9b8d650029ac8d, for GNU/Linux 4.15.0, stripped
-busybox-x86_64-linux-gnu:        ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=d9677d0ce13a59409a076688c901d0036e57c8a2, for GNU/Linux 3.2.0, stripped
+busybox-riscv64-linux-gnu:       ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=391b0723968038586c5d87be77e06c11e4973b8e, for GNU/Linux 4.15.0, stripped
+busybox-x86_64-linux-gnu:        ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=2dd886577a3eb4909947b48e47d618f3ab681bb1, for GNU/Linux 3.2.0, stripped
 ```
 
 # bundled commands
 ```console
 $ qemu-aarch64-static ./busybox-aarch64-linux-gnu
-BusyBox v1.36.0 (2023-04-22 10:32:22 UTC) multi-call binary.
+BusyBox v1.36.0 (2023-04-24 07:00:56 UTC) multi-call binary.
 BusyBox is copyrighted by many authors between 1998-2015.
 Licensed under GPLv2. See source distribution for detailed
 copyright notices.
